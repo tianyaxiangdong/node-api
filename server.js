@@ -67,7 +67,31 @@ router.route('/bears')
 			res.json(bears);
 		});
 	});
+router.route('/test')
 
+	// create a bear (accessed at POST http://localhost:8080/bears)
+	.post(function(req, res) {
+		
+		var bear = new Bear();		// create a new instance of the Bear model
+		bear.name = req.body.name;  // set the bears name (comes from the request)
+
+		bear.save(function(err) {
+			if (err)
+				res.send(err);
+
+			res.json({ message: 'Bear created!' });
+		});
+
+		
+	})
+
+	// get all the bears (accessed at GET http://localhost:8080/api/bears)
+	.get(function(req, res) {
+	 
+
+			res.json('[{a:1,b:2},{a:11,b:22}]');
+	 
+	});
 // on routes that end in /bears/:bear_id
 // ----------------------------------------------------
 router.route('/bears/:bear_id')
