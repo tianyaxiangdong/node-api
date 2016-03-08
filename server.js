@@ -22,6 +22,7 @@ var Bear     = require('./app/models/bear');
 
 // ROUTES FOR OUR API
 // =============================================================================
+/*
 app.all('/*', function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
@@ -29,6 +30,7 @@ app.all('/*', function(req, res, next) {
   next();
 
 });
+*/
 // create our router
 var router = express.Router();
 
