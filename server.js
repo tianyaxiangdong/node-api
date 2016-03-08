@@ -89,7 +89,7 @@ router.route('/test')
 	.get(function(req, res) {
 	 
 
-			res.json('[{a:1,b:2},{a:11,b:22}]');
+			res.json([{a:1,b:2},{a:11,b:22}]);
 	 
 	});
 // on routes that end in /bears/:bear_id
