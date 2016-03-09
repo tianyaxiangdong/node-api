@@ -25,7 +25,7 @@ var Bear     = require('./app/models/bear');
 
 app.all('/*', function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+ // res.header("Access-Control-Allow-Headers", "X-Requested-With");
   res.header("Access-Control-Allow-Methods", "GET, POST","PUT");
   next();
 
@@ -80,15 +80,7 @@ router.route('/test')
 	// create a bear (accessed at POST http://localhost:8080/bears)
 	.post(function(req, res) {
 		
-		var bear = new Bear();		// create a new instance of the Bear model
-		bear.name = req.body.name;  // set the bears name (comes from the request)
-
-		bear.save(function(err) {
-			if (err)
-				res.send(err);
-
-			res.json({ message: 'Bear created!' });
-		});
+	 	res.json({"status":1,message:"create success"});
 
 		
 	})
